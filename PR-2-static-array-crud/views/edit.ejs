@@ -8,11 +8,11 @@
 </head>
 <body>
     <div class="container">
-        <form class="w-50 mx-auto mt-5" method="post" action="/create">
+        <form class="w-50 mx-auto mt-5" method="post" action="/edit">
             <h2>Edit User</h2>
             <div class="mb-3">
                 <label class="form-label">Username</label>
-                <input type="hidden" name="id" value="<%= Date.now() %>" >
+                <input type="hidden" name="id" value="<%= user.id %>" >
                 <input type="text" name="username" value="<%= user.username %>" class="form-control">
               </div>
             <div class="mb-3">

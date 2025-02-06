@@ -38,6 +38,24 @@ app.get('/edit/user/',(req,res)=>{
     return res.render('./edit',{user});
 })
 
+app.post('/edit',(req,res)=>{
+    let {id,username,email,password,phone} = req.body;
+    console.log(req.body);
+    
+    users = users.map((user)=>{
+            if(user.id === id)
+            {
+                user.username = username
+                user.email = email
+                user.password = password
+                user.phone = phone
+            }
+            return user;
+    })
+    console.log("Data Updated.");    
+    return res.redirect('/');
+})
+
 app.listen(port,(err)=>{
     if(!err){
         console.log("server start.");
