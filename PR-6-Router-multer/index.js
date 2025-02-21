@@ -3,12 +3,9 @@ const port = 8081;
 const app = express();
 
 app.set('view engine','ejs');
+app.use(express.static('public'))
 
-// app.get('/',(req,res)=>{
-//     return res.render('index');
-// })
-
-app.use('/',require('./routers'))
+app.use('/',require('./routers/userRouter'))
 
 app.listen(port,()=> 
     console.log(
